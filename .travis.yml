@@ -1,6 +1,6 @@
 language: csharp
 mono: none
-dotnet: 4.6.1
+dotnet: 4.6.0
 solution: Network.sln
 install:
 - dotnet restore
