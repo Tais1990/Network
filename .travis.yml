@@ -1,7 +1,7 @@
 language: csharp
 mono: none
-dotnet: 4.6.0
-solution: Network.sln
+dotnet: 2.0.0
+
 install:
 - dotnet restore
 
