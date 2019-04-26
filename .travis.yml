@@ -1,2 +1,2 @@
 language: csharp
-solution: Network.sln
+solution: NetworkTestUnit/NetworkTestUnit.sln
