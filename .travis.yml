@@ -1,2 +1,9 @@
 language: csharp
 solution: Network.sln
+
+matrix:
+  include:
+    - dotnet: 2.1.502
+      mono: none
+      script:
+       - dotnet test NetworkTestUnit
