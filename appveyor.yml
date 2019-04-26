@@ -3,7 +3,7 @@ branches:
   only:
   model.vector
 before_build:
-- ps: dotnet restore
+ ps: dotnet restore
 build:
   verbosity: minimal
 after_build:
