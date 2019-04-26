@@ -1,5 +1,5 @@
 version: 1.0.0.{build}
-  branches:
+branches:
   only:
   model.vector
 before_build:
