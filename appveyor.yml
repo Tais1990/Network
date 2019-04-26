@@ -1,9 +1,9 @@
 version: 1.0.0.{build}
 branches:
   only:
-  model.vector
+  - model.vector
 before_build:
- ps: dotnet restore
+ - ps: dotnet restore
 build:
   verbosity: minimal
 after_build:
