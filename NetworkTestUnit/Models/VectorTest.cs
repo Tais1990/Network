@@ -1,8 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿//using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace Network.Models.Tests
 {
+    /*
     [TestClass()]
     public class VectorTest
     {
@@ -180,4 +181,5 @@ namespace Network.Models.Tests
             Assert.AreEqual(v.y, 0, MyMath.Epsilon);
         }
     }
+    */
 }
