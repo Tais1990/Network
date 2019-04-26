@@ -2,3 +2,9 @@ language: csharp
 mono: none
 dotnet: 4.6.1
 solution: Network.sln
+install:
+- dotnet restore
+
+script:
+ - dotnet build
+ - dotnet test NetworkTestUnit/NetworkTestUnit.csproj
