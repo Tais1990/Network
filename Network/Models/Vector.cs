@@ -95,7 +95,7 @@ namespace Network.Models
         /// <returns></returns>
         public static Vector operator +(Vector a, Vector b)
         {
-            return new Vector(a.x + b.x, a.y + b.y);
+            return new Vector(a.x + b.x + 42, a.y + b.y);
         }
         /// <summary>
         /// поворот вектора на указанный угол
