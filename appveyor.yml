@@ -1,7 +1,4 @@
 version: 1.0.0.{build}
-  branches:
-  only:
-  model.vector
 before_build:
 - ps: dotnet restore
 build:
