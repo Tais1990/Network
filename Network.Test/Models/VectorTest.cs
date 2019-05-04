@@ -2,8 +2,6 @@
 using System;
 using Xunit;
 
-namespace Network.Test.Models.Test
-{
     public class VectorTest
     {
         [Fact]
@@ -15,32 +13,30 @@ namespace Network.Test.Models.Test
         public void CanInstantiateVectorWithCoordinates()
         {
             Vector vector = new Vector(-5, 9);
-            Assert.Equal(-5, vector.x);
-            Assert.Equal(9, vector.y);
+            Assert.Equal(-5, vector.X);
+            Assert.Equal(9, vector.Y);
         }
         [Fact]
         public void CanInstantiateVectorCopy()
         {
             Vector vector = new Vector(1, 9);
             Vector vectorNew = new Vector(vector);
-            Assert.Equal(1, vectorNew.x);
-            Assert.Equal(9, vectorNew.y);
+            Assert.Equal(1, vectorNew.X);
+            Assert.Equal(9, vectorNew.Y);
         }
 
         [Fact]
         public void CalcueteMod()
         {
             Vector vector = new Vector(1, 1);
-            Assert.Equal(Math.Sqrt(2), vector.mod());
+            Assert.Equal(Math.Sqrt(2), vector.Mod());
         }
         [Fact]
         public void CalcueteModInt()
         {
             Vector vector = new Vector(4, -3);
-            Assert.Equal(5, vector.mod());
-        }
-        //[TestInitialize]
-        // тут может быть прописано то, что должно выполниться перед всеми тестами. только обязательно public
+            Assert.Equal(5, vector.Mod());
+        }        
         [Fact]
         public void Multiplication1()
         {
@@ -110,8 +106,8 @@ namespace Network.Test.Models.Test
             Vector a = new Vector(1, 2);
             Vector b = new Vector(1, 2);
             Vector c = a + b;
-            Assert.Equal(2, c.x);
-            Assert.Equal(4, c.y);
+            Assert.Equal(2, c.X);
+            Assert.Equal(4, c.Y);
         }
         [Fact]
         public void Plus2()
@@ -119,8 +115,8 @@ namespace Network.Test.Models.Test
             Vector a = new Vector(1, 2);
             Vector b = new Vector(1, -2);
             Vector c = a + b;
-            Assert.Equal(2, c.x);
-            Assert.Equal(0, c.y);
+            Assert.Equal(2, c.X);
+            Assert.Equal(0, c.Y);
         }
         [Fact]
         public void Minus1()
@@ -128,8 +124,8 @@ namespace Network.Test.Models.Test
             Vector a = new Vector(1, 2);
             Vector b = new Vector(1, 2);
             Vector c = a - b;
-            Assert.Equal(0, c.x);
-            Assert.Equal(0, c.y);
+            Assert.Equal(0, c.X);
+            Assert.Equal(0, c.Y);
         }
         [Fact]
         public void Minus2()
@@ -137,48 +133,48 @@ namespace Network.Test.Models.Test
             Vector a = new Vector(1, 2);
             Vector b = new Vector(1, -2);
             Vector c = a - b;
-            Assert.Equal(0, c.x);
-            Assert.Equal(4, c.y);
+            Assert.Equal(0, c.X);
+            Assert.Equal(4, c.Y);
         }
         [Fact]
         public void Rotation1()
         {
             Vector vector = new Vector(1, 2);
-            Vector v = vector.rotation(Math.PI * 0.5);
-            Assert.Equal(-2, v.x, MyMath.Precision);
-            Assert.Equal(1, v.y, MyMath.Precision);
+            Vector v = vector.Rotation(Math.PI * 0.5);
+            Assert.Equal(-2, v.X, MyMath.Precision);
+            Assert.Equal(1, v.Y, MyMath.Precision);
         }
         [Fact]
         public void Rotation2()
         {
             Vector vector = new Vector(1, 2);
-            Vector v = vector.rotation(-Math.PI * 0.5);
-            Assert.Equal(2, v.x, MyMath.Precision);
-            Assert.Equal(-1, v.y, MyMath.Precision);
+            Vector v = vector.Rotation(-Math.PI * 0.5);
+            Assert.Equal(2, v.X, MyMath.Precision);
+            Assert.Equal(-1, v.Y, MyMath.Precision);
         }
         [Fact]
         public void Rotation3()
         {
             Vector vector = new Vector(1, 2);
-            Vector v = vector.rotation(Math.PI);
-            Assert.Equal(-1, v.x, MyMath.Precision);
-            Assert.Equal(-2, v.y, MyMath.Precision);
+            Vector v = vector.Rotation(Math.PI);
+            Assert.Equal(-1, v.X, MyMath.Precision);
+            Assert.Equal(-2, v.Y, MyMath.Precision);
         }
         [Fact]
         public void Rotation4()
         {
             Vector vector = new Vector(1, Math.Sqrt(3));
-            Vector v = vector.rotation(Math.PI / 6.0);
-            Assert.Equal(0, v.x, MyMath.Precision);
-            Assert.Equal(2, v.y, MyMath.Precision);
+            Vector v = vector.Rotation(Math.PI / 6.0);
+            Assert.Equal(0, v.X, MyMath.Precision);
+            Assert.Equal(2, v.Y, MyMath.Precision);
         }
         [Fact]
         public void Rotation5()
         {
             Vector vector = new Vector(1, Math.Sqrt(3));
-            Vector v = vector.rotation((-1) * Math.PI / 3.0);
-            Assert.Equal(2, v.x, MyMath.Precision);
-            Assert.Equal(0, v.y, MyMath.Precision);
+            Vector v = vector.Rotation((-1) * Math.PI / 3.0);
+            Assert.Equal(2, v.X, MyMath.Precision);
+            Assert.Equal(0, v.Y, MyMath.Precision);
         }
     }
-}
+

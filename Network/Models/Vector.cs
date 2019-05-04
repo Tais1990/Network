@@ -9,23 +9,24 @@ namespace Network.Models
     /// <summary>
     /// Вектор
     /// </summary>
-    public class Vector
+    public class Vector : BaseVM
     {
         /// <summary>
         /// координата x
         /// </summary>
-        public double x;
+        public double X;
         /// <summary>
         /// координата y
         /// </summary>
-        public double y;
+        public double Y;
+        
         /// <summary>
         /// Пустой конструктор
         /// </summary>
         public Vector()
         {
-            this.x = 0.0;
-            this.y = 0.0;
+            this.X = MyMath.Rendom(5.0);
+            this.Y = MyMath.Rendom(5.0);
         }
         /// <summary>
         /// Конструктор с передаваемыми значениями
@@ -34,8 +35,8 @@ namespace Network.Models
         /// <param name="y"></param>
         public Vector(double x, double y)
         {
-            this.x = x;
-            this.y = y;
+            this.X = x;
+            this.Y = y;
         }
         /// <summary>
         /// Конструктор копия
@@ -43,16 +44,16 @@ namespace Network.Models
         /// <param name="v"></param>
         public Vector(Vector v)
         {
-            this.x = v.x;
-            this.y = v.y;
+            this.X = v.X;
+            this.Y = v.Y;
         }
         /// <summary>
         /// Вычисление длины вектора
         /// </summary>
         /// <returns></returns>
-        public double mod()
+        public double Mod()
         {
-            return Math.Sqrt(this.x * this.x + this.y * this.y);
+            return Math.Sqrt(this.X * this.X + this.Y * this.Y);
         }
         /// <summary>
         /// Опреатор умножения векторов
@@ -62,7 +63,7 @@ namespace Network.Models
         /// <returns></returns>
         public static double operator *(Vector a, Vector b)
         {
-            return a.x * b.x + a.y * b.y;
+            return a.X * b.X + a.Y * b.Y;
         }
         /// <summary>
         /// оператор вычисления углов между векторами
@@ -73,9 +74,9 @@ namespace Network.Models
         public static double operator ^(Vector a, Vector b)
         {
             // определим для начала знак поворота, через скалярное произведение
-            int sign = Math.Sign(a.x * b.y - a.y * b.x);
+            int sign = Math.Sign(a.X * b.Y - a.Y * b.X);
             sign = sign == 0 ? 1 : sign;
-            return Math.Acos((a * b) / (a.mod() * b.mod())) * sign;
+            return Math.Acos((a * b) / (a.Mod() * b.Mod())) * sign;
         }
         /// <summary>
         /// Оператор вычитания векторов
@@ -85,7 +86,7 @@ namespace Network.Models
         /// <returns></returns>
         public static Vector operator -(Vector a, Vector b)
         {
-            return new Vector(a.x - b.x, a.y - b.y);
+            return new Vector(a.X - b.X, a.Y - b.Y);
         }
         /// <summary>
         /// Оператор суммировния векторов
@@ -95,16 +96,16 @@ namespace Network.Models
         /// <returns></returns>
         public static Vector operator +(Vector a, Vector b)
         {
-            return new Vector(a.x + b.x, a.y + b.y);
+            return new Vector(a.X + b.X, a.Y + b.Y);
         }
         /// <summary>
         /// поворот вектора на указанный угол
         /// </summary>
         /// <param name="angle">угол</param>
         /// <returns></returns>
-        public Vector rotation(double angle)
+        public Vector Rotation(double angle)
         {
-            return new Vector(Math.Cos(angle) * this.x - Math.Sin(angle) * this.y, Math.Sin(angle) * this.x + Math.Cos(angle) * this.y);
+            return new Vector(Math.Cos(angle) * this.X - Math.Sin(angle) * this.Y, Math.Sin(angle) * this.X + Math.Cos(angle) * this.Y);
         }
     }
 }
