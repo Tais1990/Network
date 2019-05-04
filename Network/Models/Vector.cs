@@ -9,7 +9,7 @@ namespace Network.Models
     /// <summary>
     /// Вектор
     /// </summary>
-    public class Vector
+    public class Vector : BaseVM
     {
         /// <summary>
         /// координата x

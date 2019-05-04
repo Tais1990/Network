@@ -10,7 +10,7 @@ namespace Network.Models
     /// <summary>
     /// Частица
     /// </summary>
-    public class Particle
+    public class Particle : BaseVM
     {
         /// <summary>
         /// координата x
