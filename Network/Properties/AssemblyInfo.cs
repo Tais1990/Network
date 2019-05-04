@@ -8,9 +8,9 @@ using System.Windows;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("Network")]
-[assembly: AssemblyDescription("Description")]
+[assembly: AssemblyDescription("Simulation application hard spheres")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("TAIS")]
+[assembly: AssemblyCompany("Turysheva Ekaterina. Tais")]
 [assembly: AssemblyProduct("Network")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
