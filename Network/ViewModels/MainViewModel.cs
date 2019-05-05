@@ -1,6 +1,8 @@
 ﻿using Network.Models;
+using Network.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +18,9 @@ namespace Network.ViewModels
     /// </summary>
     public enum StateAction { ReStart, Play, Pause, NotBegin }
 
-    class MainViewModel : BaseVM
+    public class MainViewModel : BaseVM
     {
-        #region States and function
+        #region States, function, command
         /// <summary>
         /// переход между состояниями системы
         /// </summary>        
@@ -86,11 +88,21 @@ namespace Network.ViewModels
         }
         #endregion
 
+        
+        private Collection<ParticleGraphic> particleGraphics = new Collection<ParticleGraphic>();
+        public ObservableCollection<ParticleGraphic> ParticleGraphics => new ObservableCollection<ParticleGraphic>(particleGraphics);
 
         public MainViewModel()
         {
             this.State = State.NotBegin;
             this.StateAction = StateAction.NotBegin;
+
+            Configuration configuration = new Configuration();
+            double coefficient = 350 / configuration.length;
+            foreach (Particle particle in configuration.particles)
+            {
+                this.particleGraphics.Add(new ParticleGraphic(particle, coefficient));
+            }
         }
     }
 }

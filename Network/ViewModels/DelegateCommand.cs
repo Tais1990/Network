@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Network.ViewModels
 {
-    class DelegateCommand : ICommand
+    public class DelegateCommand : ICommand
     {
         private Action<object> execute;
         private Func<object, bool> canExecute;
