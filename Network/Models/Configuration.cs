@@ -29,7 +29,7 @@ namespace Network.Models
             this.width = 50.0;
             this.particles = new Collection<Particle>();
 
-            this.particles.Add(new Particle(10, 10, 1, new Vector(1, 0)));
+            this.particles.Add(new Particle(10, 10, 3, new Vector(1, 0)));
         }
     }
 }
