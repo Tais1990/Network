@@ -1,9 +1,12 @@
 # Changelog
 ### Unrelesses
-- add view
-- add first test of view
+- move particles
 - add automatic number in package manager
-## [1.0.2](https://github.com/Tais1990/Network/tree/v1.0.2)(2019-04-27 22:33)
+## [1.0.3](https://github.com/Tais1990/Network/tree/v1.0.3)(2019-05-05 22:23)
+### Added
+- view
+- test for view
+## [1.0.2](https://github.com/Tais1990/Network/tree/v1.0.2)(2019-05-04 22:33)
 ### Added
 - add class particle and tests
 - add package manager
