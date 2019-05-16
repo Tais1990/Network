@@ -136,7 +136,7 @@ namespace Network.UserControls
             DoubleAnimationUsingPath animationY = new DoubleAnimationUsingPath()
             {
                 PathGeometry = animationPath,
-                Duration = new Duration(TimeSpan.FromSeconds(100)),
+                Duration = new Duration(TimeSpan.FromSeconds(timeMove)),
                 Source = PathAnimationSource.Y,
             };
             Storyboard.SetTarget(animationY, shape);
@@ -179,13 +179,13 @@ namespace Network.UserControls
                 ellipse.Fill = new SolidColorBrush(Color.FromArgb(255, 0, 255, 0));
                 ellipse.Width = particle.Radius * 2;
                 ellipse.Height = particle.Radius * 2;
-                Canvas.SetTop(ellipse, particle.StartPoint.X);
-                Canvas.SetLeft(ellipse, particle.StartPoint.Y);
+                Canvas.SetTop(ellipse, particle.StartPoint.Y);
+                Canvas.SetLeft(ellipse, particle.StartPoint.X);
 
                 var style = new Style(typeof(Ellipse));
 
 
-                Dictionary<TypeAction, TriggerAction> actions = GetComplexAction(ellipse, 5, particle);
+                Dictionary<TypeAction, TriggerAction> actions = GetComplexAction(ellipse, 10, particle);
                 Dictionary<TypeAction, DataTrigger> triggers = GetComplexTrigger(ellipse);
                 // инициатор движения
                 TriggerAction triggerAction;

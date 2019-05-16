@@ -96,13 +96,26 @@ namespace Network.ViewModels
         {
             this.State = State.NotBegin;
             this.StateAction = StateAction.NotBegin;
+                        
 
-            Configuration configuration = new Configuration();
-            double coefficient = 350 / configuration.length;
-            foreach (Particle particle in configuration.particles)
+            History history = new History();
+            double coefficient = 350 / history.Configurations.FirstOrDefault<Configuration>().Length;
+            foreach (Particle particle in history.Configurations.FirstOrDefault<Configuration>().Particles)
             {
                 this.particleGraphics.Add(new ParticleGraphic(particle, coefficient));
             }
+            history.Move(10);
+            
+            this.particleGraphics.Clear();
+            foreach (Particle particle in history.Configurations.FirstOrDefault<Configuration>().Particles)
+            {
+                ParticleGraphic particleGraphic = new ParticleGraphic(particle, coefficient);
+                particleGraphic.Points = history.Path(particle, coefficient);
+
+                this.particleGraphics.Add(particleGraphic);
+            }
+            
+
         }
     }
 }

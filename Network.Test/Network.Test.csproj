@@ -58,6 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ConfigurationTest.cs" />
+    <Compile Include="Models\HistoryTest.cs" />
     <Compile Include="Models\ParticleTest.cs" />
     <Compile Include="Models\VectorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

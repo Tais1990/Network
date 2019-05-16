@@ -167,6 +167,14 @@ public class ParticleTest
         a.CrossWall(5, 10);
         Assert.Equal(1, a.Speed.Y);
     }
+    [Fact]
+    public void CheckMove()
+    {
+        Particle a = new Particle(3, 1, new Vector(1, 1));
+        a.Move(5);
+        Assert.Equal(8, a.X);
+        Assert.Equal(6, a.Y);
+    }
     #endregion
 }
 

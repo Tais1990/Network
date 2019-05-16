@@ -180,6 +180,17 @@ namespace Network.Models
                 this.Speed.Y = -this.Speed.Y;
             return this;
         }
+        /// <summary>
+        /// Прямолинейное поступательное равномерное движение чстицы
+        /// </summary>
+        /// <param name="time">время в течении которого частица двигалась</param>
+        /// <returns></returns>
+        public Particle Move(double time)
+        {
+            this.X = this.X + this.Speed.X * time;
+            this.Y = this.Y + this.Speed.Y * time;
+            return this;
+        }
         #endregion
         #region Assistive
         /// <summary>
